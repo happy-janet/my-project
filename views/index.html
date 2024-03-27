@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DayStar Daycare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fec9f1;
+            color: #333;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        header {
+            background-color: #824D74; /* Updated color */
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        /* .star-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(30deg) scale(0.5);
+            animation: spin 5s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg) scale(0.5);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg) scale(0.5);
+            }
+        } */
+
+        .star-img {
+    position: absolute;
+    top: -50%; /* Start from above the container */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, 0) rotate(30deg) scale(0.5);
+    animation: moveUpDown 5s linear infinite;
+}
+
+@keyframes moveUpDown {
+    0% {
+        top: -50%; /* Start from above the container */
+    }
+    50% {
+        top: 50%; /* Move to the bottom */
+    }
+    100% {
+        top: -50%; /* Return to the top */
+    }
+}
+        nav {
+            background-color: #824D74; /* Updated color */
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+            transition: color 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffc107 !important; /* Change color on hover */
+        }
+
+        
+        .content {
+            padding: 50px 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .about-us {
+            background-color: #fff; /* Background color */
+            padding: 50px;
+            margin: 50px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .about-us h2 {
+            color: #824D74; /* Updated color */
+        }
+        .about-us p {
+            color: #666; /* Paragraph color */
+        }
+        footer {
+            background-color: #824D74; /* Updated color */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            /* position: fixed; */
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+              <a class="navbar-brand" href="#">DAYSTAR</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Sitters</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Babies</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Doll store</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Administrator
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Signup</a></li>
+                      <li><a class="dropdown-item" href="#">Login</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </nav>
+
+    <header>
+        <h1>WELCOME TO DAYSTAR DAYCARE</h1>
+        <img src="./logo.png" alt="Star" class="star-img" style="width: 30%;">
+    </header>
+
+    <div class="content">
+        <div class="about-us">
+            <h2>About Us</h2>
+            <p>Welcome to Daystar Daycare Kabalagala, where we are dedicated to nurturing the unique potential of every child. With a focus on play-based learning and individualized attention, we provide a safe and enriching environment for children to thrive. Our holistic approach fosters cognitive, social, emotional, and physical development, supported by a team of experienced educators. We prioritize partnership with families and maintain state-of-the-art facilities designed for exploration and growth. Join the Daystar family and embark on an exciting journey of discovery and development with us.
+
+
+
+
+
+
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contact: 0782479489</p>
+        <p>&copy; 2024 DayStar. All rights reserved</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

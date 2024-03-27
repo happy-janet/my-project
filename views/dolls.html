@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doll Stall - Daystar Daycare</title>
+  <style>
+  /* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.item {
+  text-align: center;
+  margin: 20px;
+}
+
+.item img {
+  max-width: 100%;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.cart {
+  border: 1px solid #ccc;
+  padding: 20px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #fff;
+}
+
+.cart h2 {
+  margin-top: 0;
+}
+
+.cart ul {
+  padding: 0;
+  list-style: none;
+}
+
+.cart li {
+  margin-bottom: 10px;
+}
+</style>
+
+</head>
+<body>
+  <header>
+    <h1>Doll Stall - Daystar Daycare</h1>
+  </header>
+  
+  <div class="container">
+    <div class="item">
+      <img src="doll1.jpg" alt="Doll 1">
+      <h2>Doll 1</h2>
+      <p>$10</p>
+      <button onclick="addToCart('Doll 1', 10)">Add to Cart</button>
+    </div>
+    <div class="item">
+      <img src="doll2.jpg" alt="Doll 2">
+      <h2>Doll 2</h2>
+      <p>$15</p>
+      <button onclick="addToCart('Doll 2', 15)">Add to Cart</button>
+    </div>
+    <!-- Add more dolls as needed -->
+  </div>
+
+  <div class="cart">
+    <h2>Cart</h2>
+    <ul id="cart-items">
+    </ul>
+    <p>Total: $<span id="cart-total">0</span></p>
+  </div>
+
+  <script>
+    // script.js
+let cartItems = [];
+let cartTotal = 0;
+
+function addToCart(itemName, itemPrice) {
+  cartItems.push({ name: itemName, price: itemPrice });
+  cartTotal += itemPrice;
+  updateCart();
+}
+
+function updateCart() {
+  const cartList = document.getElementById('cart-items');
+  const totalElement = document.getElementById('cart-total');
+  
+  cartList.innerHTML = '';
+  
+  cartItems.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = `${item.name} - $${item.price}`;
+    cartList.appendChild(li);
+  });
+  
+  totalElement.textContent = cartTotal;
+}
+  </script>
+</body>
+</html>
