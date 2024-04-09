@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DayStar Admin Dashboard</title>
+    <link rel="stylesheet" href="admindashboard.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="#sitters">Sitters</a></li>
+            <li><a href="#babies">Babies</a></li>
+            <li><a href="#payments">Payments</a></li>
+            <li><a href="#procurement">Procurement</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <header>
+            <h1>DayStar Admin Dashboard</h1>
+        </header>
+
+        <main>
+            <section id="sitters" class="section">
+                <h2>Sitters Management</h2>
+                <!-- Sitters management form or table goes here -->
+            </section>
+
+            <section id="babies" class="section">
+                <h2>Babies Management</h2>
+                <!-- Babies management form or table goes here -->
+            </section>
+
+            <section id="payments" class="section">
+                <h2>Payments Management</h2>
+                <!-- Payments management form or table goes here -->
+            </section>
+
+            <section id="procurement" class="section">
+                <h2>Procurement Management</h2>
+                <!-- Procurement management form or table goes here -->
+            </section>
+
+            <section id="data-display" class="section">
+                <h2>Data Display</h2>
+                <!-- Data display area goes here -->
+                <canvas id="myChart" width="400" height="200"></canvas>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 DayStar Daycare</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="../javascript/admindashboard.js"></script>
+</body>
+</html>

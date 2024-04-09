@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitters Management</title>
+    <link rel="stylesheet" href="../views/sittersmangement.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sitters Management</h1>
+        </header>
+
+        <main>
+            <section class="sitters-section">
+                <h2>All Sitters</h2>
+                <div id="sitters-list"></div>
+                <div id="pagination"></div>
+            </section>
+
+            <section class="add-sitter-section">
+                <h2>Add/Edit Sitter</h2>
+                <form id="sitter-form">
+                    <input type="hidden" id="sitter-id">
+                    <div>
+                        <label for="sitter-name">Name:</label>
+                        <input type="text" id="sitter-name" required>
+                    </div>
+                    <div>
+                        <label for="sitter-location">Location:</label>
+                        <input type="text" id="sitter-location" required>
+                    </div>
+                    <button type="submit" id="submit-btn">Add Sitter</button>
+                    <button type="button" id="cancel-btn">Cancel</button>
+                </form>
+            </section>
+
+            <section class="register-sitter-section">
+                <h2>Register Babysitter</h2>
+                <!-- Include the babysitter registration form here -->
+                <!-- Start of babysitter registration form -->
+                <div class="container">
+                    <h2>Babysitter Registration Form</h2>
+                    <form id="registrationForm" class="form">
+                        <div class="form-group">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" name="firstName" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" name="lastName" />
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location:</label>
+                            <input type="text" id="location" name="location" />
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth:</label>
+                            <input type="date" id="dob" name="dob" />
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender:</label>
+                            <select id="gender" name="gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="nextOfKin">Next of Kin:</label>
+                            <input type="text" id="nextOfKin" name="nextOfKin" />
+                        </div>
+                        <div class="form-group">
+                            <label for="nin">National Identification Number (NIN):</label>
+                            <input type="text" id="nin" name="nin" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="recommender">Recommender's Name:</label>
+                            <input type="text" id="recommender" name="recommender" />
+                        </div>
+                        <div class="form-group">
+                            <label for="educationLevel">Level of Education:</label>
+                            <input type="text" id="educationLevel" name="educationLevel" />
+                        </div>
+                        <div class="form-group">
+                            <label for="contact">Contact:</label>
+                            <input type="text" id="contact" name="contact" />
+                        </div>
+                        <div class="form-group">
+                            <label for="sittersNumber">Babysitter's Number:</label>
+                            <input type="text" id="sittersNumber" name="sittersNumber" />
+                        </div>
+                        <div class="btn">
+                            <input type="submit" value="Register" />
+                        </div>
+                    </form>
+                </div>
+                <!-- End of babysitter registration form -->
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 DayStar Daycare</p>
+        </footer>
+    </div>
+
+    <script src="../javascript/sittersmanagement.js"></script>
+</body>
+</html>

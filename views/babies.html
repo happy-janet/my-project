@@ -5,43 +5,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Baby Registration Form</title>
 <style>
+    :root {
+      --bg-color: #080808;
+      --second-bg-color: #131313;
+      --text-color: white;
+      --main-color: #6ccff6;
+    }
+
     body {
-        font-family: Arial, sans-serif;
-        background-color: #824D74 ;
-        margin: 0;
-        padding: 0;
+      background: var(--bg-color);
+      color: var(--main-color);
+      font-family: Arial, sans-serif;
+      padding: 20px;
     }
+
     .container {
-        max-width: 600px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #fec9f1;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+      background: var(--main-color);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background: var(--second-bg-color);
+      border: 1px solid var(--main-color);
+      padding: 20px;
+      --webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 0 25px var(--main-color);
+      text-align: left;
     }
+
+    h2 {
+      text-align: center;
+      font-weight: 900;
+      color: #fff;
+      opacity: 0.7;
+      font-size: 2rem;
+      margin-top: 0;
+      margin-bottom: 25px;
+      text-shadow: 2px 2px 4px var(--main-color);
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
     label {
-        font-weight: bold;
+      font-weight: bold;
+      color: var(--main-color);
     }
+
     input[type="text"],
+    input[type="email"],
+    input[type="date"],
     input[type="number"],
     select {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
+      width: calc(100% - 10px);
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
     }
+
     input[type="submit"] {
-        background-color: #007bff;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 80px ;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      grid-column: span 2;
     }
+
     input[type="submit"]:hover {
-        background-color: #45a049;
+      background-color: #45a049;
+      background: var(--second-bg-color);
+    box-shadow: 4px 4px 60px 8px var(--main-color);
     }
 </style>
 </head>
@@ -51,7 +94,7 @@
     <h2>Baby Registration Form</h2>
     <form id="babyForm">
         <label for="babyName">Baby's Name:</label>
-        <input type="text" id="babyName" required>
+        <input type="text" id="babyName">
 
         <label for="gender">Gender:</label>
         <select id="gender" required>
@@ -60,27 +103,27 @@
             <option value="female">Female</option>
             <option value="other">Other</option>
         </select>
-
+        
         <label for="age">Age (in months):</label>
-        <input type="number" id="age" required>
+        <input type="number" id="age">
 
         <label for="location">Location:</label>
-        <input type="text" id="location" required>
+        <input type="text" id="location">
 
         <label for="timeOfArrival">Time of Arrival:</label>
-        <input type="time" id="timeOfArrival" required>
+        <input type="time" id="timeOfArrival">
 
         <label for="parentsName">Parent's Name:</label>
-        <input type="text" id="parentsName" required>
+        <input type="text" id="parentsName">
 
         <label for="amount">Amount in Shillings:</label>
-        <input type="number" id="amount" required>
+        <input type="number" id="amount">
 
         <label for="periodOfStay">Period of Stay:</label>
-        <input type="text" id="periodOfStay" required>
+        <input type="text" id="periodOfStay">
 
         <label for="babyNumber">Baby Number:</label>
-        <input type="number" id="babyNumber" required>
+        <input type="number" id="babyNumber" >
 
         <input type="submit" value="Register">
     </form>
@@ -91,15 +134,21 @@
         event.preventDefault(); // Prevent the form from submitting
 
         // Collect form data
-        var babyName = document.getElementById('babyName').value;
-        var gender = document.getElementById('gender').value;
-        var age = document.getElementById('age').value;
-        var location = document.getElementById('location').value;
-        var timeOfArrival = document.getElementById('timeOfArrival').value;
-        var parentsName = document.getElementById('parentsName').value;
-        var amount = document.getElementById('amount').value;
-        var periodOfStay = document.getElementById('periodOfStay').value;
-        var babyNumber = document.getElementById('babyNumber').value;
+        let babyName = document.getElementById('babyName').value;
+        let gender = document.getElementById('gender').value;
+        let age = document.getElementById('age').value;
+        let location = document.getElementById('location').value;
+        let timeOfArrival = document.getElementById('timeOfArrival').value;
+        let parentsName = document.getElementById('parentsName').value;
+        let amount = document.getElementById('amount').value;
+        let periodOfStay = document.getElementById('periodOfStay').value;
+        let babyNumber = document.getElementById('babyNumber').value;
+
+        // Validate form fields
+        if (!babyName || !gender || !age || !location || !timeOfArrival || !parentsName || !amount || !periodOfStay || !babyNumber) {
+            alert("Please fill in all fields.");
+            return;
+        }
 
         // Do something with the data (for example, send it to a server using AJAX)
         console.log("Baby's Name:", babyName);
